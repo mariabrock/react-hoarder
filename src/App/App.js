@@ -1,12 +1,16 @@
 import React from 'react';
+
+import MyNavbar from '../Components/shared/MyNavbar/MyNavbar';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <button className="btn btn-danger">Bootstrap Button</button>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <MyNavbar />
+      </div>
+    );
+  }
 }
 
 export default App;
