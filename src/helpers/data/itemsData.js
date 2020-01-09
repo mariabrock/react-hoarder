@@ -24,11 +24,11 @@ const getMyStuffByUid = (uid) => new Promise((resolve, reject) => {
 
 // const getSingleBoard = (boardId) => axios.get(`${baseUrl}/boards/${boardId}.json`);
 
-const saveItem = (boardInfo) => axios.post(`${baseUrl}/boards.json`, boardInfo);
+const saveItem = (itemInfo) => axios.post(`${baseUrl}/boards.json`, itemInfo);
 
-const updateItem = (boardId, newBoardInfo) => axios.put(`${baseUrl}/boards/${boardId}.json`, newBoardInfo);
+const updateItem = (itemId, newItemInfo) => axios.put(`${baseUrl}/boards/${itemId}.json`, newItemInfo);
 
-const deleteItem = (boardId) => axios.delete(`${baseUrl}/boards/${boardId}.json`);
+const deleteItem = (itemId) => axios.delete(`${baseUrl}/boards/${itemId}.json`);
 
 export default {
   getMyStuffByUid,

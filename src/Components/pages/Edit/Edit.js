@@ -1,11 +1,11 @@
 import React from 'react';
-import './New.scss';
+import './Edit.scss';
 
-class New extends React.Component {
+class Edit extends React.Component {
   render() {
     return (
-        <div className="New">
-            <h1>New Stuff</h1>
+        <div className="Edit">
+            <h1>Edit Stuff</h1>
             <div className="boards d-flex flex-wrap">
             </div>
         </div>
@@ -13,4 +13,4 @@ class New extends React.Component {
   }
 }
 
-export default New;
+export default Edit;

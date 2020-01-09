@@ -1,11 +1,11 @@
 import React from 'react';
-import './New.scss';
+import './Single.scss';
 
-class New extends React.Component {
+class Single extends React.Component {
   render() {
     return (
-        <div className="New">
-            <h1>New Stuff</h1>
+        <div className="Single">
+            <h1>Single Stuff</h1>
             <div className="boards d-flex flex-wrap">
             </div>
         </div>
@@ -13,4 +13,4 @@ class New extends React.Component {
   }
 }
 
-export default New;
+export default Single;
