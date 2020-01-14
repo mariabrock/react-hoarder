@@ -5,8 +5,8 @@ class New extends React.Component {
   render() {
     return (
         <div className="New">
-            <h1>New Items</h1>
-            <div className="boards d-flex flex-wrap">
+            <h1>New Stuff</h1>
+            <div className="new d-flex flex-wrap">
             </div>
         </div>
     );
