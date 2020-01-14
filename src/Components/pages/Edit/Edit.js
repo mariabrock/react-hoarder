@@ -6,7 +6,7 @@ class Edit extends React.Component {
     return (
         <div className="Edit">
             <h1>Edit Stuff</h1>
-            <div className="boards d-flex flex-wrap">
+            <div className="edit d-flex flex-wrap">
             </div>
         </div>
     );

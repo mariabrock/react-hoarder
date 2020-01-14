@@ -6,7 +6,7 @@ class New extends React.Component {
     return (
         <div className="New">
             <h1>New Stuff</h1>
-            <div className="boards d-flex flex-wrap">
+            <div className="new d-flex flex-wrap">
             </div>
         </div>
     );

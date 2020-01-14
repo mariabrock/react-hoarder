@@ -21,10 +21,13 @@ class MyNavbar extends React.Component {
           return (
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/mystuff">My Stuff</Link>
+                <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="/new">New Items</Link>
+                <Link className="nav-link" to="/stuff">My Stuff</Link>
+              </li>
+              <li className="nav-item">
+              <Link className="nav-link" to="/stuff/new">New Items</Link>
               </li>
               <li className="nav-item">
                 <button className="nav-link btn btn-danger" onClick={this.logMeOut}>Logout</button>

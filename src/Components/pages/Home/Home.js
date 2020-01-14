@@ -6,7 +6,7 @@ class Home extends React.Component {
     return (
       <div className="Home">
           <h1>Home Page</h1>
-          <div className="boards d-flex flex-wrap">
+          <div className="home d-flex flex-wrap">
             {/* {this.state.boards.map((board) => (<Board key={board.id} board={board} deleteBoard={this.deleteBoard} />))} */}
           </div>
       </div>

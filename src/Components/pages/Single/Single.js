@@ -6,7 +6,7 @@ class Single extends React.Component {
     return (
         <div className="Single">
             <h1>Single Stuff</h1>
-            <div className="boards d-flex flex-wrap">
+            <div className="single d-flex flex-wrap">
             </div>
         </div>
     );
