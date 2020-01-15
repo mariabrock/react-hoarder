@@ -4,7 +4,7 @@ import apiKeys from '../apiKeys.json';
 const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getMyStuffByUid = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/boards.json?orderBy="uid"&equalTo="${uid}"`)
+  axios.get(`${baseUrl}/items.json?orderBy="uid"&equalTo="${uid}"`)
     .then((result) => {
       const allStuffObj = result.data;
       const item = [];
@@ -24,11 +24,11 @@ const getMyStuffByUid = (uid) => new Promise((resolve, reject) => {
 
 // const getSingleBoard = (boardId) => axios.get(`${baseUrl}/boards/${boardId}.json`);
 
-const saveItem = (itemInfo) => axios.post(`${baseUrl}/boards.json`, itemInfo);
+const saveItem = (itemInfo) => axios.post(`${baseUrl}/items.json`, itemInfo);
 
-const updateItem = (itemId, newItemInfo) => axios.put(`${baseUrl}/boards/${itemId}.json`, newItemInfo);
+const updateItem = (itemId, newItemInfo) => axios.put(`${baseUrl}/items/${itemId}.json`, newItemInfo);
 
-const deleteItem = (itemId) => axios.delete(`${baseUrl}/boards/${itemId}.json`);
+const deleteItem = (itemId) => axios.delete(`${baseUrl}/items/${itemId}.json`);
 
 export default {
   getMyStuffByUid,
