@@ -2,12 +2,13 @@ import React from 'react';
 import './New.scss';
 
 import itemsData from '../../../helpers/data/itemsData';
+import authData from '../../../helpers/data/authData';
 
 class New extends React.Component {
   state = {
     itemName: '',
     itemDescription: '',
-    itemImageUrl: '',
+    itemImage: '',
   }
 
   componentDidMount() {
@@ -15,7 +16,7 @@ class New extends React.Component {
     if (itemId) {
       itemsData.getSingleItem(itemId)
         .then((response) => {
-          this.setState({ itemName: response.data.itemName, itemDescription: response.data.itemDescription, itemImageUrl: response.data.itemImage });
+          this.setState({ itemName: response.data.itemName, itemDescription: response.data.itemDescription, itemImage: response.data.itemImage });
         })
         .catch((err) => console.error('error in get item', err));
     }
@@ -31,12 +32,25 @@ class New extends React.Component {
     this.setState({ itemDescription: e.target.value });
   }
 
-  imageUrlChange = (e) => {
-    this.setState({ itemImageUrl: e.target.value });
+  itemImageChange = (e) => {
+    this.setState({ itemImage: e.target.value });
+  }
+
+  saveItemEvent = (e) => {
+    e.preventDefault();
+    const newItem = {
+      itemName: this.state.itemName,
+      itemDescription: this.state.itemDescription,
+      itemImage: this.state.itemImage,
+      uid: authData.getUid(),
+    };
+    itemsData.saveItem(newItem)
+      .then(() => this.props.history.push('/stuff'))
+      .catch((err) => console.error('error from save item', err));
   }
 
   render() {
-    const { itemName, itemDescription, itemImageUrl } = this.state;
+    const { itemName, itemDescription, itemImage } = this.state;
     const { itemId } = this.props.match.params;
     return (
         <div className="New">
@@ -68,13 +82,13 @@ class New extends React.Component {
                   className="form-control"
                   id="item-imageUrl"
                   placeholder="Enter item Url"
-                  value={itemImageUrl}
-                  onChange={this.imageUrlChange}
+                  value={itemImage}
+                  onChange={this.itemImageChange}
                   />
                 </div>
                 { itemId
-                  ? <button className="btn btn-dark" onClick={this.editItemEvent}>Update Board</button>
-                  : <button className="btn btn-dark" onClick={this.saveItemEvent}>Save Board</button>
+                  ? <button className="btn btn-dark" onClick={this.editItemEvent}>Update Item</button>
+                  : <button className="btn btn-dark" onClick={this.saveItemEvent}>Save Item</button>
                 }
             </form>
             </div>
