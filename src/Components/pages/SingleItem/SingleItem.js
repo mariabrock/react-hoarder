@@ -1,5 +1,5 @@
 import React from 'react';
-import './Single.scss';
+import './SingleItem.scss';
 
 class Single extends React.Component {
   render() {

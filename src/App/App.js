@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConnection from '../helpers/data/connection';
@@ -12,7 +17,7 @@ import Home from '../Components/pages/Home/Home';
 import New from '../Components/pages/New/New';
 import MyStuff from '../Components/pages/MyStuff/MyStuff';
 import Edit from '../Components/pages/Edit/Edit';
-import Single from '../Components/pages/Single/Single';
+import SingleItem from '../Components/pages/SingleItem/SingleItem';
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
@@ -57,7 +62,7 @@ class App extends React.Component {
             <PrivateRoute path="/stuff/new" exact component={New} authed={authed} />
             <PrivateRoute path="/stuff" exact component={MyStuff} authed={authed} />
             <PrivateRoute path="/stuff/12345/edit" exact component={Edit} authed={authed} />
-            <PrivateRoute path="/stuff/12345" exact component={Single} authed={authed} />
+            <PrivateRoute path="/stuff/12345" exact component={SingleItem} authed={authed} />
           </Switch>
         </Router>
       </div>
