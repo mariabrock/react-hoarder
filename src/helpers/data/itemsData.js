@@ -22,7 +22,7 @@ const getMyStuffByUid = (uid) => new Promise((resolve, reject) => {
     });
 });
 
-// const getSingleBoard = (boardId) => axios.get(`${baseUrl}/boards/${boardId}.json`);
+const getSingleItem = (itemId) => axios.get(`${baseUrl}/items/${itemId}.json`);
 
 const saveItem = (itemInfo) => axios.post(`${baseUrl}/items.json`, itemInfo);
 
@@ -32,7 +32,7 @@ const deleteItem = (itemId) => axios.delete(`${baseUrl}/items/${itemId}.json`);
 
 export default {
   getMyStuffByUid,
-  //   getSingleBoard,
+  getSingleItem,
   saveItem,
   updateItem,
   deleteItem,
